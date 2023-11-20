@@ -18,6 +18,7 @@
 
    ```bash
    conda create env -y -n mics python=3.9
+   conda activate mics
    bash install.sh
    ```
 
