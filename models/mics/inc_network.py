@@ -4,7 +4,6 @@ from models.network.resnet_alice import *
 from utils.mixup_utils import to_one_hot
 
 class MYNET(nn.Module):
-
     def __init__(self, args, mode=None):
         super().__init__()
         self.mode = mode

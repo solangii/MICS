@@ -59,7 +59,6 @@ def base_train(model, trainloader, optimizer, scheduler, epoch, args):
     return tl, ta
 
 
-# use
 def replace_base_fc(trainset, transform, model, args):
     # replace fc.weight with the embedding average of train data
     model = model.eval()

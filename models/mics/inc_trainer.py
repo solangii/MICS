@@ -183,11 +183,10 @@ class FSCILTrainer(Trainer):
             torch.save(dict(params=self.model.state_dict()), save_model_dir)
             self.best_model_dict = deepcopy(self.model.state_dict())
             print('Test acc = {:.2f}%'.format(self.trlog['max_acc'][session]))
-        # args.save_path = f'/home/solang/result/analysis/{args.exp_name}/{args.dataset}/{args.memo}'
-        # ensure_path(args.save_path)
-        # args.save_path = os.path.join(args.save_path, 'last_session.pth')
-        # print(f"Save last session model to {args.save_path}")
-        # torch.save(dict(params=self.model.state_dict()), args.save_path)
+
+        args.save_path = os.path.join(args.save_path, 'last_session.pth')
+        print(f"Save last session model to {args.save_path}")
+        torch.save(dict(params=self.model.state_dict()), args.save_path)
 
         print('\n*************** Final results ***************')
         print(self.trlog['max_acc'], '\n')
@@ -374,10 +373,6 @@ class FSCILTrainer(Trainer):
                     classifier = model.module.fc
                     output = model.module.get_logits(output, classifier.weight)
                     loss += F.cross_entropy(output, label)
-                    # novel_w = torch.mean(torch.reshape(output, (args.way, args.shot, -1)), dim=1)
-                    # all_w = torch.cat([base_w, novel_w], 0)
-                    # logit = model.module.get_logits(output, all_w)
-                    # loss += F.cross_entropy(logit, label)
 
             lrc = scheduler.get_last_lr()[0]
             tqdm_gen.set_description('Session 0, epo {}, lrc={:.4f},total loss={:.4f} acc={:.4f}'
@@ -389,18 +384,13 @@ class FSCILTrainer(Trainer):
             loss.backward()
             optimizer.step()
 
-            # print("After update: {}".format(model.module.encoder.conv1.weight.data[(38, 0, 0, 0)].cpu().numpy()))
-
             if self.args.st_ratio < 1:
                 updated_param_dict = deepcopy(model.state_dict())  # parameters after update
                 model.load_state_dict(self.best_model_dict)
-                # print("Load weight: {}".format(model.module.encoder.conv1.weight.data[(38, 0, 0, 0)].cpu().numpy()))
-
                 for k, v in dict(model.named_parameters()).items():
                     if v.requires_grad:
                         for idx in P_st_idx[k]:
                             v.data[idx] = updated_param_dict[k].data[idx]
-                # print("Update weight: {}".format(model.module.encoder.conv1.weight.data[(38, 0, 0, 0)].cpu().numpy()))
 
         tl = tl.item()
         ta = ta.item()

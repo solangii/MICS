@@ -11,7 +11,7 @@
 1. Clone this repository.
 
    ```bash
-   glt clone http://github.com/solang/mics.git
+   git clone http://github.com/solang/mics.git
    ```
 
 2. Install the required dependency. 
