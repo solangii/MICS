@@ -31,7 +31,7 @@
 Download FSCIL benchmark datasets.
 
 1. CIFAR100: https://www.cs.toronto.edu/~kriz/cifar.html
-2. mini-ImageNet: There is no official website for mini-ImageNet. You can utilize the *learn2learn*[4] python package or the unofficial Google Drive links for the download.
+2. mini-ImageNet: There is no official website for mini-ImageNet. You can utilize the [*learn2learn*](https://github.com/learnables/learn2learn/) python package or the unofficial Google Drive links for the download.
 3. CUB-200-2011: https://www.vision.caltech.edu/datasets/cub_200_2011/
 
 ### Train
