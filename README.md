@@ -4,7 +4,7 @@
 >
 > Solang Kim, Yuho Jeong, Joon Sung Park, Sung Whan Yoon
 >
-> In WACV 2023.
+> In WACV 2024.
 
 ### Installation
 
