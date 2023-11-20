@@ -12,8 +12,8 @@ nohup python -u run.py \
   -epochs_new 5 \
   -gpu 0 \
   -temperature 16 \
-  -model_dir "pretrained/mini.pth" \
-  -dataroot '/home/miil/Datasets/FSCIL-CEC' \
+  -model_dir 'your_model' \
+  -dataroot 'your_dataroot' \
   -train mixup_hidden \
   -mixup_alpha 0.7 \
   -label_mix steep_dummy \
