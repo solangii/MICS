@@ -1,10 +1,10 @@
 ## MICS: Midpoint Interpolation to Learn Compact and Separated Representations for Few-Shot Class-Incremental Learning
 
-> **MICS: Midpoint Interpolation to Learn Compact and Separated Representations for Few-Shot Class-Incremental Learning** 
+> **MICS: Midpoint Interpolation to Learn Compact and Separated Representations for Few-Shot Class-Incremental Learning** [\[Paper\]](https://openaccess.thecvf.com/content/WACV2024/html/Kim_MICS_Midpoint_Interpolation_To_Learn_Compact_and_Separated_Representations_for_WACV_2024_paper.html) [\[Supp\]](https://openaccess.thecvf.com/content/WACV2024/supplemental/Kim_MICS_Midpoint_Interpolation_WACV_2024_supplemental.pdf)
 >
 > Solang Kim, Yuho Jeong, Joon Sung Park, Sung Whan Yoon
 >
-> In WACV 2024.
+> In WACV 2024. 
 
 ### Installation
 
